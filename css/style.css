@@ -442,3 +442,42 @@ input[type=range]::-moz-range-thumb{
 .diff-table tr:last-child td{border-bottom:none;}
 
 .badge-pill{display:inline-block;background:var(--cream-300);color:var(--maroon-700);padding:4px 12px;border-radius:999px;font-size:.75rem;font-weight:700;margin-bottom:10px;}
+
+/* ==========================================================================
+   Accessibility: focus visibility + reduced motion
+   ========================================================================== */
+
+/* A single consistent focus ring for every interactive element, tuned to
+   read clearly on both light and dark (hero/footer) backgrounds. Only shows
+   for keyboard/AT focus (:focus-visible), not on a mouse click. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible{
+  outline: 3px solid var(--gold-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.site-header a:focus-visible,
+.hero a:focus-visible,
+.testimonial a:focus-visible,
+footer a:focus-visible,
+.maroon-900 a:focus-visible{
+  outline-color: var(--gold-300);
+}
+/* Buttons already have their own border/pill shape — keep the ring outside it */
+.btn:focus-visible{
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal{opacity:1;transform:none;}
+}

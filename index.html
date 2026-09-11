@@ -5,10 +5,61 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Roadrunner Food Bank of New Mexico — Redesign Concept</title>
 <meta name="description" content="A pitch concept redesign of rrfb.org: ending hunger in New Mexico, together.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="canonical" href="https://example.com/rrfb-redesign/index.html">
+<meta name="theme-color" content="#6E1B26">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Roadrunner Food Bank of New Mexico">
+<meta property="og:title" content="Roadrunner Food Bank of New Mexico — Redesign Concept">
+<meta property="og:description" content="A pitch concept redesign of rrfb.org: ending hunger in New Mexico, together.">
+<meta property="og:image" content="https://example.com/rrfb-redesign/assets/og-image.jpg">
+<meta property="og:url" content="https://example.com/rrfb-redesign/index.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Roadrunner Food Bank of New Mexico — Redesign Concept">
+<meta name="twitter:description" content="A pitch concept redesign of rrfb.org: ending hunger in New Mexico, together.">
+<meta name="twitter:image" content="https://example.com/rrfb-redesign/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Roadrunner Food Bank of New Mexico",
+  "url": "https://example.com/rrfb-redesign/index.html",
+  "logo": "https://example.com/rrfb-redesign/assets/apple-touch-icon.png",
+  "description": "Roadrunner Food Bank of New Mexico is a Feeding America member food bank sourcing, warehousing, and distributing food statewide since 1979.",
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "5840 Office Blvd NE",
+      "addressLocality": "Albuquerque",
+      "addressRegion": "NM",
+      "postalCode": "87109",
+      "addressCountry": "US"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "2100 N. Main, Suite 2",
+      "addressLocality": "Las Cruces",
+      "addressRegion": "NM",
+      "postalCode": "88001",
+      "addressCountry": "US"
+    }
+  ],
+  "telephone": "+1-505-247-2052",
+  "email": "info@rrfb.org",
+  "sameAs": [
+    "https://www.facebook.com/roadrunner.food.bank/",
+    "https://www.instagram.com/roadrunnerfoodbank/",
+    "https://twitter.com/RoadrunnerFdBnk",
+    "https://www.linkedin.com/company/roadrunner-food-bank-of-new-mexico/",
+    "https://www.youtube.com/user/roadrunnerfoodbank"
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -48,6 +99,7 @@
       <a href="get-help.html">Get Help</a>
       <a href="ways-to-give.html">Ways to Give</a>
       <a href="get-involved.html">Get Involved</a>
+      <a href="news.html">News</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-cta">
@@ -227,6 +279,12 @@
       <p style="margin:0;color:rgba(255,255,255,.85);">One email a month: impact stories, drives, and ways to help.</p>
     </div>
     <form data-demo-form data-success-target="newsletter-success">
+          <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+            <label for="index-1_website">Leave this field empty</label>
+            <input type="text" id="index-1_website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="form_rendered_at" class="form-rendered-at" value="">
+
       <input type="email" placeholder="you@example.com" aria-label="Email address" required>
       <button class="btn btn-primary" type="submit">Subscribe</button>
     </form>
@@ -269,6 +327,7 @@
           <li><a href="get-involved.html#volunteer">Volunteer Shifts</a></li>
           <li><a href="ways-to-give.html#corporate">Corporate Giving</a></li>
           <li><a href="contact.html">Feedback Form</a></li>
+        <li><a href="news.html">News &amp; Updates</a></li>
         </ul>
       </div>
       <div>
@@ -284,10 +343,11 @@
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> Roadrunner Food Bank of New Mexico. Redesign concept for internal review — not the live site.</span>
       <div class="footer-badges"><span class="badge">Feeding America Member</span><span class="badge">EIN available on request</span></div>
+      <div class="footer-badges"><a href="privacy.html" style="color:rgba(255,255,255,.6);">Privacy</a><span aria-hidden="true"> · </span><a href="terms.html" style="color:rgba(255,255,255,.6);">Terms</a><span aria-hidden="true"> · </span><a href="accessibility.html" style="color:rgba(255,255,255,.6);">Accessibility</a></div>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

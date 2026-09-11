@@ -1,0 +1,38 @@
+# Netlify-style redirect map: current rrfb.org URL structure -> this
+# redesign's flatter structure. Use this if this concept ever replaces the
+# live site, so existing bookmarks/search-engine links/backlinks don't 404.
+# Format: <from>  <to>  <status>
+# See also .htaccess for the Apache-hosting equivalent.
+
+/about-us/                                                   /about.html                    301
+/contact-us/                                                 /contact.html                  301
+/find-help/find-food/                                        /get-help.html                 301
+/find-help/*                                                 /get-help.html                 301
+/learn/newsroom/                                             /news.html                     301
+/learn/newsroom/*                                            /news-article.html             301
+
+# "Give" section — funds, food, and time all consolidate into one page
+/give/give-funds/                                            /ways-to-give.html#funds        301
+/give/give-funds/financial-securities/                       /ways-to-give.html#corporate    301
+/give/give-funds/giving-societies/                            /ways-to-give.html#corporate    301
+/give/give-funds/corporate-cares/                             /ways-to-give.html#corporate    301
+/give/give-funds/full-plate-society/                          /ways-to-give.html#corporate    301
+/give/give-funds/cornucopia-society-legacy-gifts/             /ways-to-give.html#corporate    301
+/give/give-food/                                              /ways-to-give.html#food         301
+/give/give-food/food-fund-drive/                              /ways-to-give.html#food         301
+/give/give-time/                                              /ways-to-give.html#time         301
+/give/give-time/warehouse-volunteers/                         /get-involved.html#volunteer    301
+/give/give-time/warehouse-volunteers/group-volunteers/        /get-involved.html#volunteer    301
+/give/give-time/warehouse-volunteers/court-community-service/ /get-involved.html#volunteer    301
+/give/give-time/non-warehouse-volunteers/                     /get-involved.html#volunteer    301
+/give/give-time/help-center-volunteers/                       /get-involved.html#volunteer    301
+/give/*                                                       /ways-to-give.html              301
+
+# "Get Involved" section
+/get-involved/advocate                                        /get-involved.html#advocate     301
+/get-involved/*                                                /get-involved.html             301
+
+# No blanket catch-all here on purpose: both GitHub Pages and Netlify already
+# serve /404.html automatically for any unmatched path, and a wildcard rule
+# at the end of this file can take priority over real static files depending
+# on host — safer to let that default behavior handle the rest.

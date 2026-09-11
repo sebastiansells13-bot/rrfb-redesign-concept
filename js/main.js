@@ -53,11 +53,16 @@
   }
 
   // ---- Animated counters ----
+  var prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var counters = document.querySelectorAll("[data-count-to]");
   function animateCounter(el) {
     var target = parseFloat(el.getAttribute("data-count-to"));
     var suffix = el.getAttribute("data-suffix") || "";
     var decimals = el.getAttribute("data-decimals") ? parseInt(el.getAttribute("data-decimals"), 10) : 0;
+    if (prefersReducedMotion) {
+      el.textContent = target.toFixed(decimals) + suffix;
+      return;
+    }
     var duration = 1400;
     var start = null;
     function step(ts) {
@@ -118,9 +123,33 @@
   }
 
   // ---- Demo form handling (no backend — this is a pitch concept) ----
+  // Includes a basic bot-resistance pattern: a visually hidden honeypot field
+  // that real visitors never fill in, plus a render-timestamp field that
+  // catches submissions completed implausibly fast. Wire the real submit
+  // handler (Formspree, Netlify Forms, a custom endpoint, etc.) in here —
+  // both checks below should run BEFORE that request is sent.
   document.querySelectorAll("form[data-demo-form]").forEach(function (form) {
+    var timestampField = form.querySelector(".form-rendered-at");
+    if (timestampField) timestampField.value = String(Date.now());
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      var honeypot = form.querySelector('input[name="website"]');
+      if (honeypot && honeypot.value.trim() !== "") {
+        // Silently drop likely-bot submissions — no error shown, so the
+        // bot gets no signal that it was caught.
+        form.reset();
+        return;
+      }
+      if (timestampField && timestampField.value) {
+        var elapsed = Date.now() - Number(timestampField.value);
+        if (elapsed < 1500) {
+          form.reset();
+          return;
+        }
+      }
+
       var success = form.parentElement.querySelector(".form-success") || document.getElementById(form.getAttribute("data-success-target"));
       if (success) {
         success.classList.add("show");
@@ -128,6 +157,7 @@
         success.focus();
       }
       form.reset();
+      if (timestampField) timestampField.value = String(Date.now());
     });
   });
 

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Style Guide — Roadrunner Food Bank Redesign Concept</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#6E1B26">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .swatch{border-radius:12px;height:88px;display:flex;align-items:flex-end;padding:10px;font-size:.78rem;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);}
+  .swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px;}
+  .type-row{border-bottom:1px solid var(--cream-300);padding:18px 0;display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;}
+  .type-row code{font-size:.78rem;color:var(--ink-500);background:var(--cream-200);padding:2px 8px;border-radius:6px;}
+  .component-block{margin-bottom:44px;}
+  .swatch-label{font-size:.72rem;color:var(--ink-500);margin-top:6px;}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#6E1B26"/><path d="M9 31c4.5-1 7.6-4 8.8-8.4 1 3.2 3.1 5.4 6.4 6.4l9.8-10.6-3.2 9.6c3.2 0 6.4-1.1 8.6-3.2-2.1 5.3-6.4 8.5-11.7 8.5-2.2 3.1-5.3 5-8.7 5-3.1-4.1-6.3-5.3-10-6.3z" fill="#E29A2E"/><circle cx="34" cy="16.5" r="2.1" fill="#3F0F16"/></svg>
+      <span class="brand-text"><strong>Roadrunner Food Bank</strong><span>Style Guide</span></span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="index.html">← Back to site</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Design System</h1>
+      <p class="lede" style="color:rgba(255,255,255,.85);">The color, type, and component tokens behind this redesign concept — for whoever builds the production version.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="component-block">
+        <h2>Color</h2>
+        <p class="lede">Refined from RRFB's existing maroon / harvest-gold / olive identity, tuned for stronger contrast than the current site.</p>
+        <div class="swatch-grid">
+          <div><div class="swatch" style="background:#3F0F16;">#3F0F16</div><div class="swatch-label">maroon-900</div></div>
+          <div><div class="swatch" style="background:#6E1B26;">#6E1B26</div><div class="swatch-label">maroon-700</div></div>
+          <div><div class="swatch" style="background:#8A2432;">#8A2432</div><div class="swatch-label">maroon-600</div></div>
+          <div><div class="swatch" style="background:#A6303F;">#A6303F</div><div class="swatch-label">maroon-500</div></div>
+          <div><div class="swatch" style="background:#C6811A;">#C6811A</div><div class="swatch-label">gold-600</div></div>
+          <div><div class="swatch" style="background:#E29A2E;color:#3F0F16;text-shadow:none;">#E29A2E</div><div class="swatch-label">gold-500</div></div>
+          <div><div class="swatch" style="background:#F4C567;color:#3F0F16;text-shadow:none;">#F4C567</div><div class="swatch-label">gold-300</div></div>
+          <div><div class="swatch" style="background:#4B5A2F;">#4B5A2F</div><div class="swatch-label">olive-600</div></div>
+          <div><div class="swatch" style="background:#647B3C;">#647B3C</div><div class="swatch-label">olive-500</div></div>
+          <div><div class="swatch" style="background:#241512;">#241512</div><div class="swatch-label">ink-900</div></div>
+          <div><div class="swatch" style="background:#7A655D;">#7A655D</div><div class="swatch-label">ink-500</div></div>
+          <div><div class="swatch" style="background:#FBF3E6;color:#3F0F16;text-shadow:none;border:1px solid #eee;">#FBF3E6</div><div class="swatch-label">cream-200</div></div>
+        </div>
+      </div>
+
+      <div class="component-block">
+        <h2>Typography</h2>
+        <p class="lede">Fraunces (serif, display/headings) + Work Sans (body/UI). Both load via Google Fonts with <code>display=swap</code>.</p>
+        <div class="type-row"><h1 style="margin:0;font-size:2.6rem;">Ending hunger, together.</h1><code>h1 — Fraunces 600, clamp(2.4rem,5vw,4rem)</code></div>
+        <div class="type-row"><h2 style="margin:0;">A statewide network</h2><code>h2 — Fraunces 600, clamp(1.9rem,3.4vw,2.75rem)</code></div>
+        <div class="type-row"><h3 style="margin:0;">Give Funds</h3><code>h3 — Fraunces 600, 1.35rem</code></div>
+        <div class="type-row"><p style="margin:0;max-width:46ch;">Body copy runs in Work Sans at 1rem/1.6 line-height for long-form reading comfort.</p><code>body — Work Sans 400, 1rem/1.6</code></div>
+        <div class="type-row"><span class="eyebrow">Eyebrow label</span><code>.eyebrow — Work Sans 700, .78rem, uppercase, .08em tracking</code></div>
+      </div>
+
+      <div class="component-block">
+        <h2>Buttons</h2>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;padding:24px;background:var(--maroon-700);border-radius:var(--radius-md);">
+          <a href="#" class="btn btn-primary">Primary</a>
+          <a href="#" class="btn btn-secondary">Secondary (on dark)</a>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;padding:24px;">
+          <a href="#" class="btn btn-outline">Outline</a>
+          <a href="#" class="btn btn-primary btn-sm">Small primary</a>
+        </div>
+      </div>
+
+      <div class="component-block">
+        <h2>Cards</h2>
+        <div class="card-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="help-card">
+            <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1.2 4.5 2.8C12 6.2 13.5 5 15.5 5 19 5 21.5 8.5 19.5 12.5 17 16.65 12 21 12 21Z"/></svg></div>
+            <h3>Card title</h3>
+            <p style="margin:0;">.help-card — white surface, 28px radius, hover lift.</p>
+          </article>
+          <div class="value-card"><h3 style="font-size:1.1rem;">Value card</h3><p style="margin:0;">.value-card — flatter, used for supporting content blocks.</p></div>
+          <div class="location-card"><h3 style="margin-bottom:4px;">Location card</h3><p style="margin:0;color:var(--ink-500);">.location-card — used on the Contact page.</p></div>
+        </div>
+      </div>
+
+      <div class="component-block">
+        <h2>Spacing &amp; radius</h2>
+        <p class="lede">Section vertical rhythm: 88px desktop / 56px mobile. Container max-width: 1180px. Corner radii: 8px (sm, chips) · 16px (md, cards) · 28px (lg, hero bands, feature cards).</p>
+      </div>
+
+      <div class="component-block">
+        <h2>Accessibility baseline</h2>
+        <ul style="padding-left:1.2em;color:var(--ink-700);">
+          <li>Body text and interactive-element contrast targets WCAG AA (4.5:1 for normal text, 3:1 for large text/UI)</li>
+          <li>All focus states use a visible 2px outline (see <code>:focus-visible</code> rules in style.css)</li>
+          <li>Every icon-only control has an <code>aria-label</code>; decorative SVGs are <code>aria-hidden</code></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;margin-top:0;">
+      <span>© <span data-year>2026</span> Roadrunner Food Bank of New Mexico. Internal design reference — not part of the public site nav.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

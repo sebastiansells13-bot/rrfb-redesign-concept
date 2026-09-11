@@ -1,0 +1,28 @@
+# Apache-hosting equivalent of _redirects — see that file's header comment
+# for context. Use whichever matches the eventual host; a static host like
+# GitHub Pages or Netlify needs neither (Netlify reads _redirects instead).
+
+ErrorDocument 404 /404.html
+
+RewriteEngine On
+
+RewriteRule ^about-us/?$ /about.html [R=301,L]
+RewriteRule ^contact-us/?$ /contact.html [R=301,L]
+RewriteRule ^find-help/find-food/?$ /get-help.html [R=301,L]
+RewriteRule ^find-help/.*$ /get-help.html [R=301,L]
+RewriteRule ^learn/newsroom/?$ /news.html [R=301,L]
+RewriteRule ^learn/newsroom/.+$ /news-article.html [R=301,L]
+
+# "Give" section
+RewriteRule ^give/give-funds/?$ /ways-to-give.html#funds [R=301,L]
+RewriteRule ^give/give-funds/(financial-securities|giving-societies|corporate-cares|full-plate-society|cornucopia-society-legacy-gifts)/?$ /ways-to-give.html#corporate [R=301,L]
+RewriteRule ^give/give-food/?$ /ways-to-give.html#food [R=301,L]
+RewriteRule ^give/give-food/food-fund-drive/?$ /ways-to-give.html#food [R=301,L]
+RewriteRule ^give/give-time/?$ /ways-to-give.html#time [R=301,L]
+RewriteRule ^give/give-time/(warehouse-volunteers|non-warehouse-volunteers|help-center-volunteers)(/.*)?$ /get-involved.html#volunteer [R=301,L]
+RewriteRule ^give/.*$ /ways-to-give.html [R=301,L]
+
+# "Get Involved" section
+RewriteRule ^get-involved/advocate/?$ /get-involved.html#advocate [R=301,L]
+RewriteRule ^get%20involved/advocate/?$ /get-involved.html#advocate [R=301,L]
+RewriteRule ^get-involved/.*$ /get-involved.html [R=301,L]
