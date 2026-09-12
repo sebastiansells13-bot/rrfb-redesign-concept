@@ -17,6 +17,7 @@ The current site (built on an older WordPress/Divi-style template) has real stre
 | Food finder | Buried under Find Help → Find Food | Surfaced on the homepage and given its own prominent section on Get Help |
 | Mobile experience | Cramped nav, small tap targets | Full responsive rebuild — slide-in mobile nav, fluid type scale, tested at 375px width |
 | Visual system | Stock template styling, inconsistent spacing | A defined design system: color tokens, type scale, consistent card/section rhythm (see `style-guide.html`) |
+| Brand mark | The real roadrunner-with-a-corn-cob logo only appears as a static image | An original illustration inspired by the real mark — a small gold silhouette version in the nav/footer/favicon, and a full-color version as the homepage hero illustration and social-preview image |
 | Accessibility | Low-contrast text, no skip link | Skip-to-content link, semantic landmarks, visible focus rings, reduced-motion support, WCAG AA target |
 | Content/blog | News buried in a generic "Newsroom" | Dedicated News listing + article template, linked from nav and footer |
 | SEO | No structured data or social preview cards seen | Open Graph/Twitter cards, JSON-LD Organization schema, sitemap, robots.txt on every page |
@@ -60,9 +61,10 @@ rrfb-redesign/
 ├── _redirects / .htaccess Old-URL → new-URL redirect map (see file headers)
 ├── css/style.css          Design system + all page styles
 ├── js/main.js             Nav, counters, accordion, calculator, form demos, spam guard
-├── assets/                favicon.svg, apple-touch-icon.png, og-image.jpg
-└── scripts/apply_seo.py   One-time migration script used to add SEO/meta to the core
-                           pages consistently — safe to delete, kept for transparency
+├── assets/                favicon.svg, apple-touch-icon.png, og-image.jpg (roadrunner+corn mark)
+├── scripts/apply_seo.py   One-time migration scripts that added SEO/meta and the new
+└── scripts/apply_logo.py  brand mark to every page consistently — safe to delete,
+                           kept for transparency
 ```
 
 ## Viewing it
