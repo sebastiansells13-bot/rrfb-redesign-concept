@@ -8,7 +8,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BASE_URL = "https://example.com/rrfb-redesign"  # TODO: replace with the real deployed domain
+BASE_URL = "https://sebastiansells13-bot.github.io/rrfb-redesign-concept"  # live GitHub Pages URL
 
 PAGES = {
     "index.html": {

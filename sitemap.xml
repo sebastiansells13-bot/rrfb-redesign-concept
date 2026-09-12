@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: replace https://example.com/rrfb-redesign with the real deployed domain before going live -->
+<!-- Live at https://sebastiansells13-bot.github.io/rrfb-redesign-concept/ (GitHub Pages) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://example.com/rrfb-redesign/index.html</loc>
+    <loc>https://sebastiansells13-bot.github.io/rrfb-redesign-concept/index.html</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://example.com/rrfb-redesign/about.html</loc>
+    <loc>https://sebastiansells13-bot.github.io/rrfb-redesign-concept/about.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/rrfb-redesign/get-help.html</loc>
+    <loc>https://sebastiansells13-bot.github.io/rrfb-redesign-concept/get-help.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://example.com/rrfb-redesign/ways-to-give.html</loc>
+    <loc>https://sebastiansells13-bot.github.io/rrfb-redesign-concept/ways-to-give.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://example.com/rrfb-redesign/get-involved.html</loc>
+    <loc>https://sebastiansells13-bot.github.io/rrfb-redesign-concept/get-involved.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/rrfb-redesign/news.html</loc>
+    <loc>https://sebastiansells13-bot.github.io/rrfb-redesign-concept/news.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://example.com/rrfb-redesign/news-article.html</loc>
+    <loc>https://sebastiansells13-bot.github.io/rrfb-redesign-concept/news-article.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.com/rrfb-redesign/contact.html</loc>
+    <loc>https://sebastiansells13-bot.github.io/rrfb-redesign-concept/contact.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://example.com/rrfb-redesign/privacy.html</loc>
+    <loc>https://sebastiansells13-bot.github.io/rrfb-redesign-concept/privacy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://example.com/rrfb-redesign/terms.html</loc>
+    <loc>https://sebastiansells13-bot.github.io/rrfb-redesign-concept/terms.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://example.com/rrfb-redesign/accessibility.html</loc>
+    <loc>https://sebastiansells13-bot.github.io/rrfb-redesign-concept/accessibility.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

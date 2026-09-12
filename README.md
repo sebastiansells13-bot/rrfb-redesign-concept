@@ -2,6 +2,8 @@
 
 A pitch-ready redesign concept for **[rrfb.org](https://www.rrfb.org)** (Roadrunner Food Bank of New Mexico). This is a static, dependency-free prototype meant to demonstrate direction — visual design, information architecture, and interactive touches — not a drop-in CMS replacement.
 
+**🔗 Live demo: [sebastiansells13-bot.github.io/rrfb-redesign-concept](https://sebastiansells13-bot.github.io/rrfb-redesign-concept/)**
+
 > **Not affiliated with Roadrunner Food Bank of New Mexico.** All copy is original and written for this concept; facts about the organization (founding year, service area, contact info) are public information used for illustration.
 
 ## Why a redesign
@@ -77,11 +79,16 @@ python3 -m http.server 4173
 
 Then visit `http://localhost:4173`.
 
+## Deployment
+
+Live on GitHub Pages, served from the `master` branch root, at [sebastiansells13-bot.github.io/rrfb-redesign-concept](https://sebastiansells13-bot.github.io/rrfb-redesign-concept/). Every SEO/meta reference (`BASE_URL` in `scripts/apply_seo.py`, canonical links, `sitemap.xml`, `robots.txt`) already points at that URL — a push to `master` redeploys it automatically (usually live within a minute or two).
+
+If this ever moves to RRFB's own domain, re-run the placeholder swap (`grep -rl 'sebastiansells13-bot.github.io/rrfb-redesign-concept'` across the repo) and update the `BASE_URL` constant in `scripts/apply_seo.py` for future edits.
+
 ## Before this goes anywhere real
 
-A few placeholders are intentionally left for whoever deploys this for real:
+A few things are intentionally left for whoever deploys this for RRFB itself:
 
-- **Domain**: `BASE_URL`/canonical links/`sitemap.xml`/`robots.txt` all point to `https://example.com/rrfb-redesign` — swap in the real domain before launch.
 - **Legal pages**: `privacy.html` and `terms.html` are solid starting templates, not finished legal documents — have an attorney confirm they match actual data practices.
 - **Forms**: the contact and newsletter forms are demo-only (no backend). The honeypot + timing spam guard in `js/main.js` is written to run *before* a real submit — wire in Formspree, Netlify Forms, or a custom endpoint there.
 

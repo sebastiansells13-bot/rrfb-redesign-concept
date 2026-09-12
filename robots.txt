@@ -3,4 +3,4 @@ Allow: /
 Disallow: /style-guide.html
 Disallow: /scripts/
 
-Sitemap: https://example.com/rrfb-redesign/sitemap.xml
+Sitemap: https://sebastiansells13-bot.github.io/rrfb-redesign-concept/sitemap.xml
