@@ -4,9 +4,11 @@
 
   // ---- Sticky header height var + shadow on scroll ----
   var header = document.querySelector(".site-header");
+  // --header-bottom is where the header ends on screen (it sits below the
+  // utility bar until that scrolls away), so the mobile menu opens right under it.
   function setHeaderHeight() {
     if (!header) return;
-    document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px");
+    document.documentElement.style.setProperty("--header-bottom", header.getBoundingClientRect().bottom + "px");
   }
   setHeaderHeight();
   window.addEventListener("resize", setHeaderHeight);
@@ -19,17 +21,36 @@
   var navToggle = document.querySelector(".nav-toggle");
   var primaryNav = document.querySelector(".primary-nav");
   if (navToggle && primaryNav) {
-    navToggle.addEventListener("click", function () {
-      var open = primaryNav.classList.toggle("open");
+    var scrim = document.createElement("div");
+    scrim.className = "nav-scrim";
+    document.body.appendChild(scrim);
+    primaryNav.id = primaryNav.id || "primary-nav";
+    navToggle.setAttribute("aria-controls", primaryNav.id);
+
+    function setNav(open) {
+      if (open) setHeaderHeight();
+      primaryNav.classList.toggle("open", open);
+      scrim.classList.toggle("show", open);
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
       document.body.style.overflow = open ? "hidden" : "";
+    }
+    navToggle.setAttribute("aria-label", "Open menu");
+    navToggle.addEventListener("click", function () {
+      setNav(!primaryNav.classList.contains("open"));
+    });
+    scrim.addEventListener("click", function () { setNav(false); });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1140 && primaryNav.classList.contains("open")) setNav(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && primaryNav.classList.contains("open")) {
+        setNav(false);
+        navToggle.focus();
+      }
     });
     primaryNav.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        primaryNav.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      });
+      a.addEventListener("click", function () { setNav(false); });
     });
   }
 
