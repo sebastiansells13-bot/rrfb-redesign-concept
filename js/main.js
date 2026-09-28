@@ -2,6 +2,12 @@
 (function () {
   "use strict";
 
+  // Translation helper from js/i18n.js (falls back to the English given here
+  // if that script didn't load).
+  function tr(key, english) {
+    return typeof window.t === "function" ? window.t(key, english) : english;
+  }
+
   // ---- Sticky header height var + shadow on scroll ----
   var header = document.querySelector(".site-header");
   // --header-bottom is where the header ends on screen (it sits below the
@@ -32,10 +38,13 @@
       primaryNav.classList.toggle("open", open);
       scrim.classList.toggle("show", open);
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      navToggle.setAttribute("aria-label", open ? tr("js.close-menu", "Close menu") : tr("js.open-menu", "Open menu"));
       document.body.style.overflow = open ? "hidden" : "";
     }
-    navToggle.setAttribute("aria-label", "Open menu");
+    navToggle.setAttribute("aria-label", tr("js.open-menu", "Open menu"));
+    document.addEventListener("i18n:change", function () {
+      setNav(primaryNav.classList.contains("open"));
+    });
     navToggle.addEventListener("click", function () {
       setNav(!primaryNav.classList.contains("open"));
     });
@@ -127,12 +136,14 @@
   var amountOut = document.getElementById("calc-amount");
   var mealsOut = document.getElementById("calc-meals");
   function updateCalc(val) {
-    if (amountOut) amountOut.textContent = "$" + Number(val).toLocaleString();
-    if (mealsOut) mealsOut.textContent = Number(val * 5).toLocaleString() + " meals";
+    var locale = window.i18nLang && window.i18nLang() === "es" ? "es-US" : "en-US";
+    if (amountOut) amountOut.textContent = "$" + Number(val).toLocaleString(locale);
+    if (mealsOut) mealsOut.textContent = Number(val * 5).toLocaleString(locale) + " " + tr("js.meals", "meals");
   }
   if (slider) {
     updateCalc(slider.value);
     slider.addEventListener("input", function () { updateCalc(slider.value); });
+    document.addEventListener("i18n:change", function () { updateCalc(slider.value); });
     document.querySelectorAll(".chip[data-amount]").forEach(function (chip) {
       chip.addEventListener("click", function () {
         document.querySelectorAll(".chip[data-amount]").forEach(function (c) { c.classList.remove("active"); });
@@ -189,10 +200,23 @@
       var input = form.querySelector("input");
       var resultEl = form.parentElement.querySelector("[data-finder-result]");
       if (resultEl && input) {
-        resultEl.textContent =
-          "Showing partner pantries near " + (input.value || "your area") + " — this live map connects to RRFB's partner-agency database.";
-        resultEl.classList.add("show");
+        resultEl.dataset.zip = input.value.trim();
+        showFinderResult(resultEl);
       }
+    });
+  });
+  function showFinderResult(el) {
+    el.textContent =
+      tr("js.finder-showing", "Showing partner pantries near") + " " +
+      (el.dataset.zip || tr("js.finder-your-area", "your area")) + " — " +
+      tr("js.finder-live-map", "this live map connects to RRFB's partner-agency database.");
+    el.classList.add("show");
+  }
+  // Re-render a shown result after a language switch (the toggle resets the
+  // element to its translated placeholder hint first).
+  document.addEventListener("i18n:change", function () {
+    document.querySelectorAll("[data-finder-result]").forEach(function (el) {
+      if (el.dataset.zip !== undefined) showFinderResult(el);
     });
   });
 

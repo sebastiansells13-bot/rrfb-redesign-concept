@@ -33,6 +33,7 @@ The current site (built on an older WordPress/Divi-style template) has real stre
   - ZIP-code food finder demo
   - FAQ accordion
   - Mobile slide-in navigation
+  - English/Spanish toggle (EN/ES in the top bar, remembered per visitor) — see below
   - Animated stat counters on scroll
   - Contact/newsletter forms with demo confirmation states, protected by a honeypot field + timing check
 - **Fully responsive**, mobile-first layout (tested at 375px, 768px, 1024px+)
@@ -63,6 +64,9 @@ rrfb-redesign/
 ├── _redirects / .htaccess Old-URL → new-URL redirect map (see file headers)
 ├── css/style.css          Design system + all page styles
 ├── js/main.js             Nav, counters, accordion, calculator, form demos, spam guard
+├── js/i18n.js             EN/ES toggle runtime
+├── js/i18n-data.js        English → Spanish dictionary (every string on the site)
+├── scripts/i18n.py        Tags new copy for translation and checks nothing is missing
 ├── assets/                favicon.svg, apple-touch-icon.png, og-image.jpg (roadrunner+corn mark)
 ├── scripts/apply_seo.py   One-time migration scripts that added SEO/meta and the new
 └── scripts/apply_logo.py  brand mark to every page consistently — safe to delete,
@@ -84,6 +88,21 @@ Then visit `http://localhost:4173`.
 Live on GitHub Pages, served from the `master` branch root, at [sebastiansells13-bot.github.io/rrfb-redesign-concept](https://sebastiansells13-bot.github.io/rrfb-redesign-concept/). Every SEO/meta reference (`BASE_URL` in `scripts/apply_seo.py`, canonical links, `sitemap.xml`, `robots.txt`) already points at that URL — a push to `master` redeploys it automatically (usually live within a minute or two).
 
 If this ever moves to RRFB's own domain, re-run the placeholder swap (`grep -rl 'sebastiansells13-bot.github.io/rrfb-redesign-concept'` across the repo) and update the `BASE_URL` constant in `scripts/apply_seo.py` for future edits.
+
+## Spanish toggle
+
+Every visitor-facing page has an **EN / ES** toggle in the top bar. It swaps all of the page's text — headings, body copy, buttons, form labels and placeholders, the page title, and the strings the scripts write (calculator, ZIP finder, menu button) — and remembers the choice in `localStorage`. It's client-side only (no separate `/es/` URLs), so it's a visitor convenience rather than a Spanish-language SEO strategy.
+
+- **Stays in English on purpose:** the organization's name, street addresses, phone numbers, email addresses, social network names, and program/proper names (Feeding America, SNAP, the Roundhouse, Cornucopia Society, …). `style-guide.html` is an internal reference and isn't translated.
+- **Markup:** `data-i18n="key"` (text only), `data-i18n-html="key"` (text with inline links/bold), `data-i18n-attr="placeholder:key"`, and `data-i18n-skip` for things that must never be translated. Details are in the header of `js/i18n.js`.
+- **After editing any copy**, run:
+
+  ```bash
+  python3 scripts/i18n.py check
+  ```
+
+  It lists any visible text, placeholder, or `aria-label` that isn't tagged, any key without Spanish, any key whose English changed since it was translated, and any translated HTML whose links/tags don't match the English. For new copy, `python3 scripts/i18n.py annotate` tags it and adds empty entries to `js/i18n-data.js` for the Spanish to be filled in.
+- The Spanish was written for this concept; have a native speaker on RRFB's team review it before it goes live.
 
 ## Before this goes anywhere real
 
