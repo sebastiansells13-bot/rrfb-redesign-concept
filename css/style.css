@@ -111,9 +111,25 @@ section{padding:88px 0;}
 }
 .social-row a:hover{background:var(--gold-500);color:var(--ink-900);}
 .social-row svg{width:14px;height:14px;fill:currentColor;}
+/* EN/ES language toggle (js/i18n.js) */
+.lang-toggle{display:flex;flex-shrink:0;border:1px solid rgba(255,255,255,.3);border-radius:999px;overflow:hidden;}
+.lang-toggle__btn{
+  border:none;background:transparent;color:var(--cream-200);font-family:var(--font-body);
+  font-weight:700;font-size:.74rem;letter-spacing:.05em;padding:4px 10px;cursor:pointer;
+}
+.lang-toggle__btn:hover{background:rgba(255,255,255,.12);}
+.lang-toggle__btn[aria-pressed="true"]{background:var(--gold-500);color:var(--maroon-900);}
+.lang-toggle__btn:focus-visible{outline-color:var(--gold-300);outline-offset:-3px;}
+/* Keep the bar to one row: socials drop first (they're in the footer too),
+   then the portal links, then email — the language toggle always stays */
+@media (max-width:900px){
+  .utility-right .social-row{display:none;}
+}
 @media (max-width:640px){
-  /* Keep only phone + email on phones so the bar stays one row */
-  .utility-left a:nth-child(n+3), .utility-right{display:none;}
+  .utility-left a:nth-child(n+3){display:none;}
+}
+@media (max-width:400px){
+  .utility-left a:nth-child(2){display:none;}
 }
 
 /* ===== Header / nav ===== */
@@ -138,6 +154,8 @@ section{padding:88px 0;}
 .primary-nav a:hover, .primary-nav a[aria-current="page"]{background:var(--cream-300);color:var(--maroon-700);}
 .header-cta{display:flex;align-items:center;gap:10px;flex-shrink:0;}
 .header-cta .btn{padding:11px 22px;}
+/* Set by the inline head script until js/i18n.js has swapped in Spanish */
+html.i18n-pending body{visibility:hidden;}
 
 .nav-toggle{
   display:none;background:none;border:none;cursor:pointer;padding:8px;

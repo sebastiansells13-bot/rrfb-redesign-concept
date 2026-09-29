@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Get Involved — Roadrunner Food Bank Redesign Concept</title>
+<title data-i18n="get-involved.get-involved-roadrunner-food-bank">Get Involved — Roadrunner Food Bank Redesign Concept</title>
 <meta name="description" content="Volunteer shifts, advocacy, and events — ways to get hands-on in the fight against hunger.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -23,6 +23,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script>
+  // Hide the page for a moment when the visitor chose Spanish, so English
+  // doesn't flash before js/i18n.js swaps the copy (it removes this class;
+  // the timeout is a failsafe in case that script never loads).
+  try { if (localStorage.getItem("lang") === "es") { document.documentElement.classList.add("i18n-pending"); setTimeout(function () { document.documentElement.classList.remove("i18n-pending"); }, 1500); } } catch (e) {}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,17 +68,22 @@
 </script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main" data-i18n="common.skip-to-content">Skip to content</a>
 
 <div class="utility-bar">
   <div class="container">
     <div class="utility-left">
       <a href="tel:5052472052">📞 505.247.2052</a>
-      <a href="mailto:info@rrfb.org">✉️ info@rrfb.org</a>
-      <a href="#">Volunteer Login</a>
-      <a href="#">Partner Agency Portal</a>
+      <a href="mailto:info@rrfb.org" data-i18n-skip>✉️ info@rrfb.org</a>
+      <a href="#" data-i18n="common.volunteer-login">Volunteer Login</a>
+      <a href="#" data-i18n="common.partner-agency-portal">Partner Agency Portal</a>
     </div>
-    <div class="utility-right"><div class="social-row">
+    <div class="utility-right">
+      <div class="lang-toggle" role="group" aria-label="Language / Idioma" data-i18n-skip>
+        <button type="button" class="lang-toggle__btn" data-lang-toggle="en" aria-pressed="true" lang="en" aria-label="English" title="English">EN</button>
+        <button type="button" class="lang-toggle__btn" data-lang-toggle="es" aria-pressed="false" lang="es" aria-label="Español" title="Español">ES</button>
+      </div>
+      <div class="social-row" data-i18n-skip>
       <a href="https://www.facebook.com/roadrunner.food.bank/" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12"/></svg></a>
       <a href="https://www.instagram.com/roadrunnerfoodbank/" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.1 0 4.1.1 1.1 0 1.8.2 2.5.5.7.3 1.2.6 1.7 1.1.5.5.9 1 1.1 1.7.3.7.4 1.4.5 2.5 0 1 .1 1.4.1 4.1s0 3.1-.1 4.1c0 1.1-.2 1.8-.5 2.5-.3.7-.6 1.2-1.1 1.7-.5.5-1 .9-1.7 1.1-.7.3-1.4.4-2.5.5-1 0-1.4.1-4.1.1s-3.1 0-4.1-.1c-1.1 0-1.8-.2-2.5-.5-.7-.3-1.2-.6-1.7-1.1-.5-.5-.9-1-1.1-1.7-.3-.7-.4-1.4-.5-2.5C2 15.1 2 14.7 2 12s0-3.1.1-4.1c0-1.1.2-1.8.5-2.5.3-.7.6-1.2 1.1-1.7.5-.5 1-.9 1.7-1.1.7-.3 1.4-.4 2.5-.5C8.9 2 9.3 2 12 2m0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10m0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4M17.6 6.4a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4"/></svg></a>
       <a href="https://twitter.com/RoadrunnerFdBnk" aria-label="Twitter / X"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.2 8.3L23.3 22h-6.6l-5.2-6.8L5.6 22H2.4l7.7-8.8L1 2h6.8l4.7 6.2L18.9 2Zm-1.2 18h1.8L7.4 3.9H5.5L17.7 20Z"/></svg></a>
@@ -100,21 +111,21 @@
           <path d="M9,32 L-8,26 L11,40 Z" fill="#3F0F16"/>
         </g>
       </svg>
-      <span class="brand-text"><strong>Roadrunner Food Bank</strong><span>of New Mexico</span></span>
+      <span class="brand-text" data-i18n-skip><strong>Roadrunner Food Bank</strong><span>of New Mexico</span></span>
     </a>
-    <nav class="primary-nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="about.html">Our Story</a>
-      <a href="get-help.html">Get Help</a>
-      <a href="ways-to-give.html">Ways to Give</a>
-      <a href="get-involved.html" aria-current="page">Get Involved</a>
-      <a href="news.html">News</a>
-      <a href="contact.html">Contact</a>
+    <nav class="primary-nav" aria-label="Primary" data-i18n-attr="aria-label:common.primary">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="about.html" data-i18n="nav.our-story">Our Story</a>
+      <a href="get-help.html" data-i18n="nav.get-help">Get Help</a>
+      <a href="ways-to-give.html" data-i18n="nav.ways-to-give">Ways to Give</a>
+      <a href="get-involved.html" aria-current="page" data-i18n="nav.get-involved">Get Involved</a>
+      <a href="news.html" data-i18n="nav.news">News</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="header-cta">
-      <a href="get-help.html" class="btn btn-outline btn-sm">Find Food</a>
-      <a href="ways-to-give.html" class="btn btn-primary">Donate</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a href="get-help.html" class="btn btn-outline btn-sm" data-i18n="common.find-food">Find Food</a>
+      <a href="ways-to-give.html" class="btn btn-primary" data-i18n="common.donate">Donate</a>
+      <button class="nav-toggle" data-i18n-skip aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
@@ -123,50 +134,50 @@
 
   <section class="page-hero">
     <div class="container">
-      <p class="breadcrumb"><a href="index.html">Home</a> / Get Involved</p>
-      <h1>Bring your hands, your voice, or your team.</h1>
-      <p class="lede" style="color:rgba(255,255,255,.85);max-width:60ch;">From a Saturday warehouse shift to advocating at the Roundhouse, there's a role that fits your schedule.</p>
+      <p class="breadcrumb"><a href="index.html" data-i18n="common.home">Home</a> / <span data-i18n="common.get-involved">Get Involved</span></p>
+      <h1 data-i18n="get-involved.bring-your-hands-your-voice">Bring your hands, your voice, or your team.</h1>
+      <p class="lede" style="color:rgba(255,255,255,.85);max-width:60ch;" data-i18n="get-involved.from-a-saturday-warehouse-shift">From a Saturday warehouse shift to advocating at the Roundhouse, there's a role that fits your schedule.</p>
     </div>
   </section>
 
   <section id="volunteer">
     <div class="container">
       <div class="section-head center reveal">
-        <span class="eyebrow">Volunteer</span>
-        <h2>Pick a shift that fits your schedule.</h2>
-        <p class="lede center">Individuals, families, court-community-service, and corporate groups are all welcome — no experience required.</p>
+        <span class="eyebrow" data-i18n="get-involved.volunteer">Volunteer</span>
+        <h2 data-i18n="get-involved.pick-a-shift-that-fits">Pick a shift that fits your schedule.</h2>
+        <p class="lede center" data-i18n="get-involved.individuals-families-court-community-service">Individuals, families, court-community-service, and corporate groups are all welcome — no experience required.</p>
       </div>
       <div class="vol-grid">
         <div class="vol-card reveal">
           <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></div>
           <div>
-            <h3>Warehouse Sorting</h3>
-            <p>Inspect, sort, and box donated food for shipment. Weekday and Saturday morning shifts available in Albuquerque and Las Cruces.</p>
-            <a href="#" class="btn btn-sm btn-outline">See open shifts</a>
+            <h3 data-i18n="get-involved.warehouse-sorting">Warehouse Sorting</h3>
+            <p data-i18n="get-involved.inspect-sort-and-box-donated">Inspect, sort, and box donated food for shipment. Weekday and Saturday morning shifts available in Albuquerque and Las Cruces.</p>
+            <a href="#" class="btn btn-sm btn-outline" data-i18n="get-involved.see-open-shifts">See open shifts</a>
           </div>
         </div>
         <div class="vol-card reveal">
           <div class="icon-badge gold"><svg viewBox="0 0 24 24"><path d="M17 20h5v-2a4 4 0 0 0-3-3.87M9 20H4v-2a4 4 0 0 1 3-3.87m5-4a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm6 0a4 4 0 1 0-3.2-6.4"/></svg></div>
           <div>
-            <h3>Group &amp; Corporate Volunteering</h3>
-            <p>Bring your office, club, or class for a hands-on team-building session that packs real meals — we handle the logistics.</p>
-            <a href="#" class="btn btn-sm btn-outline">Book a group date</a>
+            <h3 data-i18n="get-involved.group-corporate-volunteering">Group &amp; Corporate Volunteering</h3>
+            <p data-i18n="get-involved.bring-your-office-club-or">Bring your office, club, or class for a hands-on team-building session that packs real meals — we handle the logistics.</p>
+            <a href="#" class="btn btn-sm btn-outline" data-i18n="get-involved.book-a-group-date">Book a group date</a>
           </div>
         </div>
         <div class="vol-card reveal">
           <div class="icon-badge olive"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg></div>
           <div>
-            <h3>Court Community Service</h3>
-            <p>We accept court-ordered community service hours for warehouse volunteer work — sign up and get your hours verified on-site.</p>
-            <a href="#" class="btn btn-sm btn-outline">Learn requirements</a>
+            <h3 data-i18n="get-involved.court-community-service">Court Community Service</h3>
+            <p data-i18n="get-involved.we-accept-court-ordered-community">We accept court-ordered community service hours for warehouse volunteer work — sign up and get your hours verified on-site.</p>
+            <a href="#" class="btn btn-sm btn-outline" data-i18n="get-involved.learn-requirements">Learn requirements</a>
           </div>
         </div>
         <div class="vol-card reveal">
           <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z"/></svg></div>
           <div>
-            <h3>Non-Warehouse &amp; Skilled Roles</h3>
-            <p>Help at community events, assist at a mobile pantry, or lend a professional skill — from photography to data entry.</p>
-            <a href="#" class="btn btn-sm btn-outline">Find a role</a>
+            <h3 data-i18n="get-involved.non-warehouse-skilled-roles">Non-Warehouse &amp; Skilled Roles</h3>
+            <p data-i18n="get-involved.help-at-community-events-assist">Help at community events, assist at a mobile pantry, or lend a professional skill — from photography to data entry.</p>
+            <a href="#" class="btn btn-sm btn-outline" data-i18n="get-involved.find-a-role">Find a role</a>
           </div>
         </div>
       </div>
@@ -176,20 +187,20 @@
   <section id="advocate" style="background:var(--cream-200);">
     <div class="container two-col">
       <div class="reveal">
-        <span class="eyebrow">Advocate</span>
-        <h2>Your voice changes policy — and policy changes lives.</h2>
-        <p>With 1 in 4 New Mexico children at risk of hunger, the policies that shape SNAP, school meals, and emergency food funding matter enormously. Join our advocacy network to get simple, timely actions during legislative sessions.</p>
-        <div class="chip-list"><span>Email your legislator</span><span>Share your story</span><span>Attend a hearing</span><span>Follow session updates</span></div>
-        <a href="#" class="btn btn-primary">Join the advocacy network</a>
+        <span class="eyebrow" data-i18n="get-involved.advocate">Advocate</span>
+        <h2 data-i18n="get-involved.your-voice-changes-policy-and">Your voice changes policy — and policy changes lives.</h2>
+        <p data-i18n="get-involved.with-1-in-4-new">With 1 in 4 New Mexico children at risk of hunger, the policies that shape SNAP, school meals, and emergency food funding matter enormously. Join our advocacy network to get simple, timely actions during legislative sessions.</p>
+        <div class="chip-list"><span data-i18n="get-involved.email-your-legislator">Email your legislator</span><span data-i18n="get-involved.share-your-story">Share your story</span><span data-i18n="get-involved.attend-a-hearing">Attend a hearing</span><span data-i18n="get-involved.follow-session-updates">Follow session updates</span></div>
+        <a href="#" class="btn btn-primary" data-i18n="get-involved.join-the-advocacy-network">Join the advocacy network</a>
       </div>
       <div class="value-card reveal">
-        <h3>This session, we're watching:</h3>
+        <h3 data-i18n="get-involved.this-session-we-re-watching">This session, we're watching:</h3>
         <ul style="padding-left:18px;color:var(--ink-700);">
-          <li>Federal farm-bill nutrition funding</li>
-          <li>State child-nutrition and summer-meals programs</li>
-          <li>SNAP access &amp; enrollment simplification</li>
+          <li data-i18n="get-involved.federal-farm-bill-nutrition-funding">Federal farm-bill nutrition funding</li>
+          <li data-i18n="get-involved.state-child-nutrition-and-summer">State child-nutrition and summer-meals programs</li>
+          <li data-i18n="get-involved.snap-access-enrollment-simplification">SNAP access &amp; enrollment simplification</li>
         </ul>
-        <a href="#" style="font-weight:700;color:var(--maroon-700);text-decoration:none;">Read our policy priorities →</a>
+        <a href="#" style="font-weight:700;color:var(--maroon-700);text-decoration:none;" data-i18n="get-involved.read-our-policy-priorities">Read our policy priorities →</a>
       </div>
     </div>
   </section>
@@ -197,35 +208,35 @@
   <section>
     <div class="container">
       <div class="section-head center reveal">
-        <span class="eyebrow">Upcoming</span>
-        <h2>Events &amp; drives</h2>
+        <span class="eyebrow" data-i18n="get-involved.upcoming">Upcoming</span>
+        <h2 data-i18n="get-involved.events-drives">Events &amp; drives</h2>
       </div>
       <div class="news-grid">
         <article class="news-card reveal">
           <div class="news-thumb"></div>
           <div class="body">
-            <span class="news-tag">Oct 4 · Albuquerque</span>
-            <h3>Corporate Volunteer Day — Warehouse</h3>
-            <p>Team sessions open for groups of 8–40.</p>
-            <a href="#">Reserve a slot →</a>
+            <span class="news-tag" data-i18n="get-involved.oct-4-albuquerque">Oct 4 · Albuquerque</span>
+            <h3 data-i18n="get-involved.corporate-volunteer-day-warehouse">Corporate Volunteer Day — Warehouse</h3>
+            <p data-i18n="get-involved.team-sessions-open-for-groups">Team sessions open for groups of 8–40.</p>
+            <a href="#" data-i18n="get-involved.reserve-a-slot">Reserve a slot →</a>
           </div>
         </article>
         <article class="news-card reveal">
           <div class="news-thumb" style="background:linear-gradient(135deg,var(--gold-500),var(--maroon-700));"></div>
           <div class="body">
-            <span class="news-tag">Oct 18 · Statewide</span>
-            <h3>Fall Food &amp; Fund Drive Kickoff</h3>
-            <p>Request a drive kit for your school or office.</p>
-            <a href="#">Get a kit →</a>
+            <span class="news-tag" data-i18n="get-involved.oct-18-statewide">Oct 18 · Statewide</span>
+            <h3 data-i18n="get-involved.fall-food-fund-drive-kickoff">Fall Food &amp; Fund Drive Kickoff</h3>
+            <p data-i18n="get-involved.request-a-drive-kit-for">Request a drive kit for your school or office.</p>
+            <a href="#" data-i18n="get-involved.get-a-kit">Get a kit →</a>
           </div>
         </article>
         <article class="news-card reveal">
           <div class="news-thumb" style="background:linear-gradient(135deg,var(--olive-500),var(--ink-900));"></div>
           <div class="body">
-            <span class="news-tag">Nov 2 · Roundhouse</span>
-            <h3>Advocacy Day at the Legislature</h3>
-            <p>Meet with lawmakers alongside fellow advocates.</p>
-            <a href="#">Sign up →</a>
+            <span class="news-tag" data-i18n="get-involved.nov-2-roundhouse">Nov 2 · Roundhouse</span>
+            <h3 data-i18n="get-involved.advocacy-day-at-the-legislature">Advocacy Day at the Legislature</h3>
+            <p data-i18n="get-involved.meet-with-lawmakers-alongside-fellow">Meet with lawmakers alongside fellow advocates.</p>
+            <a href="#" data-i18n="get-involved.sign-up">Sign up →</a>
           </div>
         </article>
       </div>
@@ -236,10 +247,10 @@
     <div class="container">
       <div class="cta-band reveal">
         <div>
-          <h2>Not sure which role fits?</h2>
-          <p style="margin:0;">Tell us your schedule and interests — we'll match you to a shift.</p>
+          <h2 data-i18n="get-involved.not-sure-which-role-fits">Not sure which role fits?</h2>
+          <p style="margin:0;" data-i18n="get-involved.tell-us-your-schedule-and">Tell us your schedule and interests — we'll match you to a shift.</p>
         </div>
-        <a href="contact.html" class="btn" style="background:var(--maroon-900);color:#fff;">Contact Volunteer Team</a>
+        <a href="contact.html" class="btn" style="background:var(--maroon-900);color:#fff;" data-i18n="get-involved.contact-volunteer-team">Contact Volunteer Team</a>
       </div>
     </div>
   </section>
@@ -248,26 +259,26 @@
 
 <section class="newsletter">
   <div class="container">
-    <div><h3 style="color:#fff;margin-bottom:4px;">Stay in the loop</h3><p style="margin:0;color:rgba(255,255,255,.85);">One email a month: impact stories, drives, and ways to help.</p></div>
+    <div><h3 style="color:#fff;margin-bottom:4px;" data-i18n="common.stay-in-the-loop">Stay in the loop</h3><p style="margin:0;color:rgba(255,255,255,.85);" data-i18n="common.one-email-a-month-impact">One email a month: impact stories, drives, and ways to help.</p></div>
     <form data-demo-form data-success-target="newsletter-success">
-          <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+          <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true" data-i18n-skip>
             <label for="get-involved-1_website">Leave this field empty</label>
             <input type="text" id="get-involved-1_website" name="website" tabindex="-1" autocomplete="off">
           </div>
           <input type="hidden" name="form_rendered_at" class="form-rendered-at" value="">
 
-      <input type="email" placeholder="you@example.com" aria-label="Email address" required>
-      <button class="btn btn-primary" type="submit">Subscribe</button>
+      <input type="email" placeholder="you@example.com" aria-label="Email address" required data-i18n-attr="placeholder:common.you-example-com;aria-label:common.email-address">
+      <button class="btn btn-primary" type="submit" data-i18n="common.subscribe">Subscribe</button>
     </form>
   </div>
-  <div class="container"><p id="newsletter-success" class="form-success" role="status" style="margin-top:14px;">Thanks — you're on the list! (demo confirmation)</p></div>
+  <div class="container"><p id="newsletter-success" class="form-success" role="status" style="margin-top:14px;" data-i18n="common.thanks-you-re-on-the">Thanks — you're on the list! (demo confirmation)</p></div>
 </section>
 
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand">
+        <div class="footer-brand" data-i18n-skip>
                     <svg class="brand-mark" width="36" height="36" viewBox="0 0 48 48" aria-hidden="true">
             <circle cx="24" cy="24" r="24" fill="#8A2432"/>
             <g transform="translate(8,10) scale(0.315)">
@@ -286,36 +297,38 @@
           </svg>
           <strong>Roadrunner Food Bank</strong>
         </div>
-        <p>Serving New Mexico since 1979 as the state's largest hunger-relief distribution hub and a proud member of Feeding America.</p>
+        <p data-i18n="common.serving-new-mexico-since-1979">Serving New Mexico since 1979 as the state's largest hunger-relief distribution hub and a proud member of Feeding America.</p>
       </div>
-      <div><h4>Explore</h4><ul>
-        <li><a href="about.html">Our Story</a></li>
-        <li><a href="get-help.html">Get Help</a></li>
-        <li><a href="ways-to-give.html">Ways to Give</a></li>
-        <li><a href="get-involved.html">Get Involved</a></li>
+      <div><h4 data-i18n="common.explore">Explore</h4><ul>
+        <li><a href="about.html" data-i18n="common.our-story">Our Story</a></li>
+        <li><a href="get-help.html" data-i18n="common.get-help">Get Help</a></li>
+        <li><a href="ways-to-give.html" data-i18n="common.ways-to-give">Ways to Give</a></li>
+        <li><a href="get-involved.html" data-i18n="common.get-involved">Get Involved</a></li>
       </ul></div>
-      <div><h4>Resources</h4><ul>
-        <li><a href="get-help.html#faq">FAQ</a></li>
-        <li><a href="get-involved.html#volunteer">Volunteer Shifts</a></li>
-        <li><a href="ways-to-give.html#corporate">Corporate Giving</a></li>
-        <li><a href="contact.html">Feedback Form</a></li>
-      <li><a href="news.html">News &amp; Updates</a></li>
+      <div><h4 data-i18n="common.resources">Resources</h4><ul>
+        <li><a href="get-help.html#faq" data-i18n="common.faq">FAQ</a></li>
+        <li><a href="get-involved.html#volunteer" data-i18n="common.volunteer-shifts">Volunteer Shifts</a></li>
+        <li><a href="ways-to-give.html#corporate" data-i18n="common.corporate-giving">Corporate Giving</a></li>
+        <li><a href="contact.html" data-i18n="common.feedback-form">Feedback Form</a></li>
+      <li><a href="news.html" data-i18n="common.news-updates">News &amp; Updates</a></li>
       </ul></div>
-      <div><h4>Contact</h4><ul>
-        <li>5840 Office Blvd NE, Albuquerque, NM 87109</li>
-        <li>2100 N. Main, Suite 2, Las Cruces, NM 88001</li>
-        <li><a href="tel:5052472052">505.247.2052</a> · <a href="tel:8663270267">866.327.0267</a> toll-free</li>
-        <li><a href="mailto:info@rrfb.org">info@rrfb.org</a></li>
+      <div><h4 data-i18n="common.contact">Contact</h4><ul>
+        <li data-i18n-skip>5840 Office Blvd NE, Albuquerque, NM 87109</li>
+        <li data-i18n-skip>2100 N. Main, Suite 2, Las Cruces, NM 88001</li>
+        <li><a href="tel:5052472052">505.247.2052</a> · <a href="tel:8663270267">866.327.0267</a> <span data-i18n="common.toll-free">toll-free</span></li>
+        <li><a href="mailto:info@rrfb.org" data-i18n-skip>info@rrfb.org</a></li>
       </ul></div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Roadrunner Food Bank of New Mexico. Redesign concept for internal review — not the live site.</span>
-      <div class="footer-badges"><span class="badge">Feeding America Member</span><span class="badge">EIN available on request</span></div>
-      <nav class="footer-legal" aria-label="Legal"><a href="privacy.html">Privacy</a><span aria-hidden="true">·</span><a href="terms.html">Terms</a><span aria-hidden="true">·</span><a href="accessibility.html">Accessibility</a></nav>
+      <span>© <span data-year>2026</span> <span data-i18n-skip>Roadrunner Food Bank of New Mexico.</span> <span data-i18n="common.redesign-concept-for-internal-review">Redesign concept for internal review — not the live site.</span></span>
+      <div class="footer-badges"><span class="badge" data-i18n="common.feeding-america-member">Feeding America Member</span><span class="badge" data-i18n="common.ein-available-on-request">EIN available on request</span></div>
+      <nav class="footer-legal" aria-label="Legal" data-i18n-attr="aria-label:common.legal"><a href="privacy.html" data-i18n="common.privacy">Privacy</a><span aria-hidden="true">·</span><a href="terms.html" data-i18n="common.terms">Terms</a><span aria-hidden="true">·</span><a href="accessibility.html" data-i18n="common.accessibility">Accessibility</a></nav>
     </div>
   </div>
 </footer>
 
+<script src="js/i18n-data.js" defer></script>
+<script src="js/i18n.js" defer></script>
 <script src="js/main.js" defer></script>
 </body>
 </html>
