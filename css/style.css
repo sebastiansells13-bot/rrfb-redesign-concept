@@ -10,6 +10,7 @@
   --maroon-600:#8A2432;
   --maroon-500:#A6303F;
   --gold-600:#C6811A;
+  --gold-700:#9A600C; /* gold for small text: 5.2:1 on white (gold-600 is 3.2:1) */
   --gold-500:#E29A2E;
   --gold-300:#F4C567;
   --olive-600:#4B5A2F;
@@ -307,7 +308,7 @@ html.i18n-pending body{visibility:hidden;}
 .news-card{background:var(--white);border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--cream-300);box-shadow:var(--shadow-sm);}
 .news-thumb{height:150px;background:linear-gradient(135deg,var(--olive-500),var(--maroon-600));}
 .news-card .body{padding:22px;}
-.news-tag{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-600);}
+.news-tag{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-700);}
 .news-card h3{margin:8px 0;font-size:1.1rem;}
 .news-card a{color:var(--maroon-700);font-weight:700;text-decoration:none;font-size:.9rem;}
 
